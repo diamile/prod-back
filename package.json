@@ -4,14 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development nodemon ./bin/www",
+    "start:prod": "NODE_ENV=production nodemon ./bin/www"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.11",
-    "nodemon": "^2.0.7"
+    "nodemailer": "^6.6.1",
+    "nodemailer-sparkpost-transport": "^2.2.0",
+    "nodemon": "^2.0.7",
+    "nvm": "0.0.4",
+    "pm2": "^3.2.4",
+    "sparkpost": "^2.1.4"
   }
 }
