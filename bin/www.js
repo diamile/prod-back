@@ -12,14 +12,14 @@ const serverHttp = http.createServer((req,res)=>{
         res.writeHead('301', { Location: `https://${ req.headers.host }${ req.url }` })
         res.end();
     
-}).listen(80,()=>{console.log('server is running')})
+}).listen(env.porthttp,()=>{console.log('server is running')})
 
 
 
-const options = {key:env.key,cert:env.cert}
+const options = {key:fs.readFileSync(env.key),cert:fs.readFileSync(env.cert)}
 
 const serverHttps = https.createServer(options,app);
-serverHttps.listen(443)
+serverHttps.listen(env.porthttps)
 
 
 
